@@ -74,7 +74,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
           # Выполняет pull образа с DockerHub
-          sudo docker pull auxon/infra_actions
+          sudo docker pull auxon/infra_actions:v1.0
           #остановка всех контейнеров
           sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5000:5000 auxon/infra_actions
+          sudo docker run --rm -d -p 5000:5000 auxon/infra_actions:v1.0
